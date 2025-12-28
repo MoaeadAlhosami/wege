@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MiniShop — e-commerce mini app
 
-## Getting Started
+Production-quality mini e-commerce app built with **Next.js (App Router) + TypeScript**, **Tailwind CSS**, and **Zustand** (cart state + localStorage persistence).
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# install
+npm install
 
-## Learn More
+# dev
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+# production build
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# tests
+npm run test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# lint
+npm run lint
+```
 
-## Deploy on Vercel
+## Tech choices
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Data loading (SSG)**: `src/data/products.json` is the single source of truth. Server pages import it via `src/data/products.ts`.
+- **API**: `GET /api/products` returns the same data (required), without duplicating logic.
+- **State**:
+  - Cart: Zustand store + `persist` middleware (localStorage key: `minishop-cart`).
+  - Filters: local component state (Home page client component), synced to URL.
+- **Styling**: Tailwind utilities + a small token set in `tailwind.config.ts`.
+- **Images**: `next/image` with remote domain `placehold.co` (configured in `next.config.ts`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## URL filter encoding
+
+Home page supports:
+
+- `category`: category name or omitted (= all)
+- `price`: `lt50` | `50-100` | `gt100` or omitted (= all)
+- `q`: search query string (debounced 300ms)
+
+Example:
+
+- `/?category=Shoes&price=50-100&q=air`
+
+## Bonus features implemented
+
+- **SSG**:
+  - Home uses static JSON import (static by default).
+  - Product details uses `generateStaticParams` + `notFound()`.
+- **Search**: 300ms debounced query.
+- **Filters persisted in URL**: read on load, write on change (with `router.replace`).
+- **Accessible drawers**:
+  - Cart drawer: closes on **ESC**, overlay click, focus returns to previous element.
+  - Mobile filters: bottom-sheet drawer + “Apply” button.
+- **UX states**:
+  - Skeletons (`src/app/loading.tsx` + client hydration skeleton).
+  - Empty state component for no results.
+  - App-level error boundary (`src/app/error.tsx`).
+- **Tests**:
+  - `filterProducts` utility unit tests.
+  - Cart store unit tests (add/increment/decrement/total).
+
+## Accessibility notes
+
+- Semantic landmarks (`header`, `main`, `footer`) + skip link.
+- Visible focus styles (`:focus-visible` in `globals.css`).
+- Drawer uses `role="dialog"` + `aria-modal` and supports ESC/overlay click.
+- All product images include descriptive `alt` text.
+
+## Testing notes
+
+- Runner: **Vitest** + **JSDOM**
+- Matchers: `@testing-library/jest-dom`
+- Alias `@/*` works in tests via `vitest.config.ts`.
+
+## Deployment (Vercel)
+
+- Push to GitHub and import into Vercel.
+- Build command: `npm run build`
+
