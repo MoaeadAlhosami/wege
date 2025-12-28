@@ -1,0 +1,99 @@
+[
+  {
+    "id": "p1",
+    "title": "AeroRun Sneakers",
+    "price": 89,
+    "category": "Shoes",
+    "image": "https://placehold.co/600x400/png?text=AeroRun+Sneakers",
+    "description": "Lightweight everyday sneakers with breathable mesh and a cushioned midsole. Built for all-day comfort and clean, minimal style."
+  },
+  {
+    "id": "p2",
+    "title": "TrailGrip Hiking Shoes",
+    "price": 129,
+    "category": "Shoes",
+    "image": "https://placehold.co/600x400/png?text=TrailGrip+Hiking+Shoes",
+    "description": "Durable trail shoes with grippy outsole and reinforced toe cap. Confident traction for weekend adventures."
+  },
+  {
+    "id": "p3",
+    "title": "Everyday Cotton Tee",
+    "price": 29,
+    "category": "Shirts",
+    "image": "https://placehold.co/600x400/png?text=Everyday+Cotton+Tee",
+    "description": "Soft, midweight cotton tee with a modern fit. A staple you’ll reach for year-round."
+  },
+  {
+    "id": "p4",
+    "title": "Oxford Button-Down",
+    "price": 59,
+    "category": "Shirts",
+    "image": "https://placehold.co/600x400/png?text=Oxford+Button-Down",
+    "description": "Classic oxford button-down with crisp collar structure. Works equally well dressed up or down."
+  },
+  {
+    "id": "p5",
+    "title": "NoiseCancel Wireless Headphones",
+    "price": 199,
+    "category": "Electronics",
+    "image": "https://placehold.co/600x400/png?text=NoiseCancel+Headphones",
+    "description": "Premium over-ear headphones with rich sound and active noise cancellation. Comfort-tuned for long sessions."
+  },
+  {
+    "id": "p6",
+    "title": "Pocket Bluetooth Speaker",
+    "price": 49,
+    "category": "Electronics",
+    "image": "https://placehold.co/600x400/png?text=Pocket+Bluetooth+Speaker",
+    "description": "Compact speaker with punchy bass and all-day battery. Great for desks, kitchens, and travel."
+  },
+  {
+    "id": "p7",
+    "title": "Minimal Leather Wallet",
+    "price": 45,
+    "category": "Accessories",
+    "image": "https://placehold.co/600x400/png?text=Minimal+Leather+Wallet",
+    "description": "Slim-profile leather wallet with clean stitching and smart card storage. Designed to disappear in your pocket."
+  },
+  {
+    "id": "p8",
+    "title": "Stainless Steel Water Bottle",
+    "price": 35,
+    "category": "Accessories",
+    "image": "https://placehold.co/600x400/png?text=Steel+Water+Bottle",
+    "description": "Insulated bottle that keeps drinks cold for hours. Sweat-free exterior with a premium matte finish."
+  },
+  {
+    "id": "p9",
+    "title": "CloudKnit Hoodie",
+    "price": 110,
+    "category": "Shirts",
+    "image": "https://placehold.co/600x400/png?text=CloudKnit+Hoodie",
+    "description": "Ultra-soft hoodie with a structured drape and brushed interior. Elevated comfort for everyday layering."
+  },
+  {
+    "id": "p10",
+    "title": "Classic White Sneakers",
+    "price": 79,
+    "category": "Shoes",
+    "image": "https://placehold.co/600x400/png?text=Classic+White+Sneakers",
+    "description": "Timeless low-top sneakers with a clean silhouette. Easy to style and made to last."
+  },
+  {
+    "id": "p11",
+    "title": "Smart Home Mini Hub",
+    "price": 99,
+    "category": "Electronics",
+    "image": "https://placehold.co/600x400/png?text=Smart+Home+Hub",
+    "description": "A compact hub that connects and controls your smart devices. Fast setup, reliable connectivity."
+  },
+  {
+    "id": "p12",
+    "title": "USB-C Fast Charger",
+    "price": 25,
+    "category": "Electronics",
+    "image": "https://placehold.co/600x400/png?text=USB-C+Fast+Charger",
+    "description": "Compact, high-efficiency USB-C charger for phones, tablets, and accessories. Built-in protection and cool operation."
+  }
+]
+
